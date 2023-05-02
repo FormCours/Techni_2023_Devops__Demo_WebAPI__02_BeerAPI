@@ -1,6 +1,11 @@
+using Demo_WebAPI.BLL.Interfaces;
+using Demo_WebAPI.BLL.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+// -> Configuration de l'injection de service
+builder.Services.AddScoped<IBeerService, BeerService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
